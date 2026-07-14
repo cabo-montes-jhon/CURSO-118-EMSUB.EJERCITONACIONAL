@@ -253,6 +253,136 @@
             para la formación de los futuros Suboficiales de la Institución.
         </p>
 
+        <!-- ========== SECCIÓN: CONSULTA DE REGISTRO INSTITUCIONAL ========== -->
+<section style="
+    background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(242,245,250,0.9));
+    border: 2px solid rgba(184,134,11,0.35);
+    border-radius: calc(12px * var(--proporcion));
+    padding: calc(2.2rem * var(--proporcion)) calc(1.8rem * var(--proporcion));
+    margin: calc(3rem * var(--proporcion)) auto;
+    max-width: 720px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(10, 25, 47, 0.08);
+    position: relative;
+    overflow: hidden;
+">
+    <!-- Adorno heráldico superior -->
+    <div style="
+        position: absolute; top: 0; left: 0; right: 0;
+        height: 4px; background: linear-gradient(90deg, transparent, var(--dorado), transparent);
+    "></div>
+
+    <h3 style="
+        color: var(--azul-oscuro);
+        font-size: calc(1.35rem * var(--proporcion));
+        margin-bottom: calc(1rem * var(--proporcion));
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+    ">Consulta de Registro Oficial</h3>
+
+    <p style="
+        color: #4a5568;
+        margin-bottom: calc(1.5rem * var(--proporcion));
+        font-size: calc(1rem * var(--proporcion));
+        line-height: 1.6;
+    ">Ingresa tu número de identificación sin puntos ni espacios para verificar tu estado</p>
+
+    <!-- CONTENEDOR DE BÚSQUEDA CON PROPORCIÓN ÁUREA EXACTA -->
+    <div style="
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: calc(10px * var(--proporcion));
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    ">
+        <input 
+            type="text" 
+            id="campo-cedula"
+            placeholder="Número de identificación"
+            style="
+                flex: 1.618;
+                padding: calc(1.1rem * var(--proporcion)) calc(1.4rem * var(--proporcion));
+                font-size: calc(1.05rem * var(--proporcion));
+                border: 2px solid #cbd5e0;
+                border-right: none;
+                outline: none;
+                background: #ffffff;
+                transition: all 0.3s ease;
+            "
+            onfocus="this.style.borderColor='var(--dorado)'; this.style.boxShadow='inset 0 0 0 3px rgba(184,134,11,0.1)'"
+            onblur="this.style.borderColor='#cbd5e0'; this.style.boxShadow='none'"
+        >
+        <button 
+            onclick="consultarAspirante()"
+            style="
+                flex: 1;
+                padding: calc(1.1rem * var(--proporcion)) calc(1.5rem * var(--proporcion));
+                font-size: calc(1rem * var(--proporcion));
+                font-weight: 700;
+                background: linear-gradient(135deg, var(--dorado), #8b6914);
+                color: #ffffff;
+                border: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.35s ease;
+                position: relative;
+                overflow: hidden;
+            "
+            onmouseover="this.style.background='linear-gradient(135deg, #a0750a, #705510)'; this.style.transform='scale(1.02)'"
+            onmouseout="this.style.background='linear-gradient(135deg, var(--dorado), #8b6914)'; this.style.transform='scale(1)'"
+        >
+            Consultar
+        </button>
+    </div>
+
+    <p id="mensaje-busqueda" style="
+        margin-top: calc(1.2rem * var(--proporcion));
+        font-size: calc(0.95rem * var(--proporcion));
+        min-height: 1.5rem;
+        display: none;
+    "></p>
+</section>
+
+<!-- ========== SCRIPT DE FUNCIONALIDAD INTEGRADO ========== -->
+<script>
+function consultarAspirante() {
+    const cedula = document.getElementById('campo-cedula').value.trim().replace(/\D/g, '');
+    const mensaje = document.getElementById('mensaje-busqueda');
+
+    // BASE DE DATOS DE REGISTROS
+    const registros = {
+        "1073684807": "ficha-nicolle.html",
+        "1023631125": "ficha-santiago.html"
+    };
+
+    if (!cedula) {
+        mensaje.textContent = "⚠️ Por favor ingresa el número de documento";
+        mensaje.style.color = "#c53030";
+        mensaje.style.display = "block";
+        return;
+    }
+
+    if (registros[cedula]) {
+        mensaje.textContent = "✅ Consultando...";
+        mensaje.style.color = "#2b6cb0";
+        mensaje.style.display = "block";
+        setTimeout(() => window.location.href = registros[cedula], 600);
+    } else {
+        mensaje.textContent = "❌ Documento no registrado en la base de datos institucional";
+        mensaje.style.color = "#c53030";
+        mensaje.style.display = "block";
+        setTimeout(() => { mensaje.style.display = "none"; }, 5000);
+    }
+}
+
+document.getElementById('campo-cedula').addEventListener("keypress", function(e) {
+    if (e.key === "Enter") consultarAspirante();
+});
+</script>
+        
         <a href="curso118.html" class="boton-acceso">
             <span>Ingresar al Curso N° 118 — EMSUB</span>
             <span class="icono-flecha">➤</span>
