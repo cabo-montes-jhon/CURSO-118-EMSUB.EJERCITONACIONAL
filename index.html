@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejército Nacional de Colombia | Curso N°118 EMSUB</title>
+    <style>
+        /* =============================================
+           DISEÑO BASADO EN PROPORCIÓN ÁUREA (1.618)
+           ============================================= */
+        :root {
+            --dorado: #b8860b;
+            --azul-oscuro: #0a192f;
+            --azul-medio: #112240;
+            --gris-fondo: #f8f9fa;
+            --texto: #333333;
+            --proporcion: 1.618;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: calc(2rem * var(--proporcion)) 1rem;
+            color: var(--texto);
+        }
+
+        /* CONTENEDOR PRINCIPAL - PROPORCIÓN ÁUREA */
+        .contenedor {
+            width: min(92%, 980px);
+            background: #ffffff;
+            border-radius: calc(16px * var(--proporcion));
+            box-shadow: 0 10px 40px rgba(10, 25, 47, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* BANDA SUPERIOR INSTITUCIONAL */
+        .cabecera {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            padding: calc(2.5rem * var(--proporcion)) calc(2rem * var(--proporcion));
+            text-align: center;
+            position: relative;
+        }
+
+        .cabecera::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(184,134,11,0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        /* LOGO SIMBÓLICO */
+        .logo-contenedor {
+            width: calc(112px * var(--proporcion));
+            height: calc(112px * var(--proporcion));
+            margin: 0 auto calc(1.5rem * var(--proporcion));
+            background: radial-gradient(circle, #ffffff, #e6e6e6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px var(--dorado), 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .logo-simbolo {
+            font-size: calc(52px * var(--proporcion));
+            color: var(--azul-oscuro);
+            font-weight: 900;
+            position: relative;
+        }
+        .logo-simbolo span {
+            position: absolute;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: var(--dorado);
+            bottom: -1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: calc(1.6rem * var(--proporcion));
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo {
+            color: #ccd6f6;
+            font-size: calc(1rem * var(--proporcion));
+            font-weight: 300;
+        }
+
+        /* LEMA INSTITUCIONAL */
+        .lema {
+            background: rgba(184,134,11,0.08);
+            border-top: 2px solid var(--dorado);
+            border-bottom: 2px solid var(--dorado);
+            padding: calc(1.2rem * var(--proporcion));
+            text-align: center;
+            margin: calc(1.8rem * var(--proporcion)) 0;
+        }
+
+        .lema h2 {
+            font-size: calc(1.4rem * var(--proporcion));
+            color: var(--azul-oscuro);
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .valores {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: calc(0.8rem * var(--proporcion));
+            margin-top: 0.8rem;
+            font-size: calc(0.95rem * var(--proporcion));
+            color: #444;
+            font-weight: 600;
+        }
+
+        .valor {
+            padding: 0.3rem 0.8rem;
+            border-right: 1px solid #ccc;
+        }
+        .valor:last-child {border: none;}
+
+        /* SECCIÓN PRINCIPAL Y BOTÓN */
+        .contenido {
+            padding: calc(2rem * var(--proporcion)) calc(1.8rem * var(--proporcion)) calc(3rem * var(--proporcion));
+            text-align: center;
+        }
+
+        .descripcion {
+            font-size: calc(1.05rem * var(--proporcion));
+            line-height: 1.7;
+            max-width: 750px;
+            margin: 0 auto calc(2.2rem * var(--proporcion));
+            color: #555;
+        }
+
+        /* BOTÓN DE ACCESO - DISEÑO LUJOSO Y RESPONSIVO */
+        .boton-acceso {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: calc(1rem * var(--proporcion)) calc(2.8rem * var(--proporcion));
+            font-size: calc(1.15rem * var(--proporcion));
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--dorado), #daa520);
+            border: none;
+            border-radius: calc(8px * var(--proporcion));
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(184,134,11,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .boton-acceso::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .boton-acceso:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 35px rgba(184,134,11,0.5);
+            background: linear-gradient(135deg, #a0750a, var(--dorado));
+        }
+
+        .boton-acceso:hover::before {left: 100%;}
+
+        .icono-flecha {transition: transform 0.3s ease;}
+        .boton-acceso:hover .icono-flecha {transform: translateX(5px);}
+
+        /* PIE DE PÁGINA */
+        .pie {
+            background: var(--azul-oscuro);
+            color: #8892b0;
+            text-align: center;
+            padding: calc(1.2rem * var(--proporcion));
+            font-size: calc(0.85rem * var(--proporcion));
+        }
+
+        /* AJUSTES PARA MÓVILES */
+        @media (max-width: 600px) {
+            h1 {font-size: 1.6rem;}
+            .lema h2 {font-size: 1.3rem;}
+            .valores {font-size: 0.9rem;}
+            .boton-acceso {padding: 1rem 2rem; font-size: 1rem;}
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <!-- CABECERA CON IDENTIDAD -->
+    <div class="cabecera">
+        <div class="logo-contenedor">
+            <div class="logo-simbolo">
+                ⚔️
+                <span>EJÉRCITO</span>
+            </div>
+        </div>
+        <h1>Ejército Nacional de Colombia</h1>
+        <p class="subtitulo">Comando de Incorporación y Formación</p>
+    </div>
+
+    <!-- LEMA Y VALORES -->
+    <div class="lema">
+        <h2>Dios • Patria • Honor • Lealtad</h2>
+        <div class="valores">
+            <div class="valor">Fe y Rectitud</div>
+            <div class="valor">Servicio y Soberanía</div>
+            <div class="valor">Verdad y Dignidad</div>
+            <div class="valor">Firmeza y Compromiso</div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO Y ACCESO -->
+    <div class="contenido">
+        <p class="descripcion">
+            Bienvenido al sistema oficial de consulta y seguimiento de aspirantes.
+            Aquí encontrarás la información correspondiente al proceso de selección e incorporación
+            para la formación de los futuros Suboficiales de la Institución.
+        </p>
+
+        <a href="curso118.html" class="boton-acceso">
+            <span>Ingresar al Curso N° 118 — EMSUB</span>
+            <span class="icono-flecha">➤</span>
+        </a>
+    </div>
+
+    <!-- PIE INSTITUCIONAL -->
+    <div class="pie">
+        República de Colombia — Ejército Nacional<br>
+        <strong>"Colombia, tierra de paz y libertad"</strong><br>
+        &copy; 2026 — Todos los derechos reservados.
+    </div>
+</div>
+
+</body>
+  </html>
+  
