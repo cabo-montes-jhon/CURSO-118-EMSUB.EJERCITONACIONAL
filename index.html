@@ -60,33 +60,33 @@
             pointer-events: none;
         }
 
-        /* LOGO SIMBÓLICO */
+        /* TARJETA PARA LOGO DEL CURSO - LISTA PARA IMAGEN */
         .logo-contenedor {
-            width: calc(112px * var(--proporcion));
-            height: calc(112px * var(--proporcion));
+            width: calc(140px * var(--proporcion));
+            height: calc(140px * var(--proporcion));
             margin: 0 auto calc(1.5rem * var(--proporcion));
-            background: radial-gradient(circle, #ffffff, #e6e6e6);
-            border-radius: 50%;
+            background: #ffffff;
+            border-radius: calc(12px * var(--proporcion));
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 0 4px var(--dorado), 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 0 0 5px var(--dorado), 0 8px 25px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
 
-        .logo-simbolo {
-            font-size: calc(52px * var(--proporcion));
-            color: var(--azul-oscuro);
-            font-weight: 900;
-            position: relative;
+        .logo-contenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fff;
         }
-        .logo-simbolo span {
-            position: absolute;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            color: var(--dorado);
-            bottom: -1.2rem;
-            left: 50%;
-            transform: translateX(-50%);
+
+        /* TEXTO DE AYUDA SI AÚN NO TIENES LA IMAGEN */
+        .logo-espacio {
+            color: #777;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
         }
 
         h1 {
@@ -210,20 +210,26 @@
             .lema h2 {font-size: 1.3rem;}
             .valores {font-size: 0.9rem;}
             .boton-acceso {padding: 1rem 2rem; font-size: 1rem;}
+            .logo-contenedor {width: 180px; height: 180px;}
         }
     </style>
 </head>
 <body>
 
 <div class="contenedor">
-    <!-- CABECERA CON IDENTIDAD -->
+    <!-- CABECERA CON TARJETA PARA LOGO DEL CURSO -->
     <div class="cabecera">
         <div class="logo-contenedor">
-            <div class="logo-simbolo">
-                ⚔️
-                <span>EJÉRCITO</span>
+            <!-- ✅ AQUÍ PEGAS O ESCRIBES LA RUTA DE TU IMAGEN -->
+            <!-- Opción 1: Si tienes el archivo guardado en la misma carpeta -->
+            <!-- <img src="logo-curso-118.png" alt="Logo Curso N°118 EMSUB"> -->
+
+            <!-- Opción 2: Espacio mientras colocas la imagen -->
+            <div class="logo-espacio">
+                Aquí irá el<br>Logo del Curso<br>N° 118 EMSUB
             </div>
         </div>
+
         <h1>Ejército Nacional de Colombia</h1>
         <p class="subtitulo">Comando de Incorporación y Formación</p>
     </div>
@@ -262,5 +268,5 @@
 </div>
 
 </body>
-  </html>
-  
+    </html>
+    
