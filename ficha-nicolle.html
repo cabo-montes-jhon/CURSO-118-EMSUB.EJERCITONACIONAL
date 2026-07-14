@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Incorporación – EMSUB</title>
+    <style>
+        :root {
+            --dorado: #b8860b;
+            --azul-oscuro: #0a192f;
+            --azul-medio: #112240;
+            --proporcion: 1.618;
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif;}
+        body {background: #f8f9fa; padding: 2rem 1rem;}
+        .documento {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid var(--azul-oscuro);
+            padding: 3rem 2.5rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .encabezado {text-align: center; border-bottom: 2px solid var(--dorado); padding-bottom: 1.5rem; margin-bottom: 2rem;}
+        .encabezado h1 {font-size: 1.4rem; color: var(--azul-oscuro); text-transform: uppercase;}
+        .encabezado p {color: #444; margin-top: 0.3rem;}
+        .sello {
+            position: absolute;
+            top: 4rem; right: 3rem;
+            border: 3px solid var(--dorado);
+            border-radius: 50%;
+            width: 110px; height: 110px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-size: 0.75rem; text-transform: uppercase; color: var(--dorado); font-weight: bold;
+            transform: rotate(-12deg);
+        }
+        .datos {margin-bottom: 1.5rem;}
+        .fila {display: flex; padding: 0.6rem 0; border-bottom: 1px solid #eee;}
+        .etiqueta {width: 32%; font-weight: bold; color: var(--azul-medio);}
+        .valor {width: 68%; color: #333;}
+        .estado {
+            background: rgba(39,174,96,0.08);
+            border: 1px solid #27ae60;
+            padding: 1rem;
+            text-align: center;
+            color: #219653;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 2rem 0;
+            text-transform: uppercase;
+        }
+        .pie {text-align: center; margin-top: 3rem; font-size: 0.85rem; color: #666; border-top: 1px solid #ccc; padding-top: 1rem;}
+        .boton-volver {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: var(--azul-oscuro);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="documento">
+    <div class="encabezado">
+        <h1>Ejército Nacional de Colombia</h1>
+        <p>Comando de Incorporación – Escuela de Suboficiales EMSUB</p>
+        <p><strong>CURSO N° 118</strong></p>
+    </div>
+
+    <div class="sello">
+        REGISTRADO<br>VALIDO
+    </div>
+
+    <h2 style="font-size: 1.2rem; color: var(--azul-medio); margin-bottom: 1rem;">FICHA DE REGISTRO DE ASPIRANTE</h2>
+
+    <div class="datos">
+        <div class="fila">
+            <div class="etiqueta">Nombre completo:</div>
+            <div class="valor">MOYANO TRUJILLO NICOLLE SAMANTA</div>
+        </div>
+        <div class="fila">
+            <div class="etiqueta">Documento de identidad:</div>
+            <div class="valor">C.C. 1.073.684.807</div>
+        </div>
+        <div class="fila">
+            <div class="etiqueta">Cargo / Programa:</div>
+            <div class="valor">Suboficial – EMSUB</div>
+        </div>
+        <div class="fila">
+            <div class="etiqueta">Unidad de incorporación:</div>
+            <div class="valor">Escuela Militar de Suboficiales</div>
+        </div>
+        <div class="fila">
+            <div class="etiqueta">Fecha de registro:</div>
+            <div class="valor">14 de julio de 2026</div>
+        </div>
+        <div class="fila">
+            <div class="etiqueta">Porcentaje de trámite:</div>
+            <div class="valor">25%</div>
+        </div>
+    </div>
+
+    <div class="estado">✅ ESTADO: ADMITIDA – EN PROCESO DE INCORPORACIÓN</div>
+
+    <p style="font-size: 0.9rem; line-height: 1.6; color: #555;">
+        La presente certifica que la aspirante se encuentra registrada y validada en el sistema de selección. El trámite avanza conforme a cronograma oficial. Documento válido para fines de verificación institucional.
+    </p>
+
+    <div style="margin-top: 3rem;">
+        <div style="float: right; text-align: center;">
+            <div style="border-top: 1px solid #333; padding-top: 0.5rem; width: 200px;">Firma Autorizada</div>
+            <p style="font-size: 0.8rem; color: #666;">Comando de Incorporación</p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="index.html" class="boton-volver">← Volver a consultas</a>
+    </div>
+
+    <div class="pie">
+        República de Colombia – Ejército Nacional<br>
+        Sistema de Gestión de Incorporación © 2026 – Versión 1.0<br>
+        *Documento generado electrónicamente, tiene validez oficial*
+    </div>
+</div>
+
+</body>
+</html>
